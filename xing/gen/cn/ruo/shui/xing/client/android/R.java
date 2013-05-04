@@ -152,8 +152,8 @@ public final class R {
         public static final int contents_phone=0x7f0a0020;
         public static final int contents_sms=0x7f0a0021;
         public static final int contents_text=0x7f0a0022;
-        public static final int history_clear_one_history_text=0x7f0a0024;
-        public static final int history_clear_text=0x7f0a0023;
+        public static final int history_clear_one_history_text=0x7f0a0023;
+        public static final int history_clear_text=0x7f0a0024;
         public static final int history_email_title=0x7f0a0025;
         public static final int history_empty=0x7f0a0026;
         public static final int history_empty_detail=0x7f0a0027;
@@ -217,10 +217,10 @@ public final class R {
         public static final int preferences_result_title=0x7f0a0061;
         public static final int preferences_scanning_title=0x7f0a0062;
         public static final int preferences_search_country=0x7f0a0063;
-        public static final int preferences_supplemental_summary=0x7f0a0066;
-        public static final int preferences_supplemental_title=0x7f0a0067;
-        public static final int preferences_try_bsplus=0x7f0a0064;
-        public static final int preferences_try_bsplus_summary=0x7f0a0065;
+        public static final int preferences_supplemental_summary=0x7f0a0064;
+        public static final int preferences_supplemental_title=0x7f0a0065;
+        public static final int preferences_try_bsplus=0x7f0a0066;
+        public static final int preferences_try_bsplus_summary=0x7f0a0067;
         public static final int preferences_vibrate_title=0x7f0a0068;
         public static final int result_address_book=0x7f0a0069;
         public static final int result_calendar=0x7f0a006a;
