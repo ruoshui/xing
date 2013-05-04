@@ -22,7 +22,7 @@
                android:layout_width="fill_parent"
                android:layout_height="fill_parent"/>
 
-  <cn.ruo.shui.xing.client.android.ViewfinderView
+  <cn.shui.express.scan.ViewfinderView
       android:id="@+id/viewfinder_view"
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"/>

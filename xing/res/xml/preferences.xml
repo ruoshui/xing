@@ -95,7 +95,7 @@
      -->
   </PreferenceCategory>
   <PreferenceCategory android:title="@string/preferences_try_bsplus">
-    <cn.ruo.shui.xing.client.android.pref.BSPlusPreference
+    <cn.shui.express.scan.pref.BSPlusPreference
         android:title="@string/preferences_try_bsplus"
         android:summary="@string/preferences_try_bsplus_summary"/>
   </PreferenceCategory>

@@ -1,4 +1,4 @@
 eclipse.preferences.version=1
-encoding//src/cn/ruo/shui/xing/client/android/common/HandlerService.java=UTF-8
-encoding//src/cn/ruo/shui/xing/client/android/common/PushMessageReceiver.java=UTF-8
-encoding//src/com/wang/yin/hessian/bean/Express.java=UTF-8
+encoding//src/cn/shui/express/scan/common/HandlerService.java=UTF-8
+encoding//src/cn/shui/express/scan/common/PushMessageReceiver.java=UTF-8
+encoding//src/cn/shui/express/scan/hessian/bean/Express.java=UTF-8

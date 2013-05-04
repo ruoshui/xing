@@ -15,7 +15,7 @@
  limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.ruo.shui.xing.client.android"
+    package="cn.shui.express.scan"
     android:installLocation="auto"
     android:versionCode="87"
     android:versionName="4.3.1" >
