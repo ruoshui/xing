@@ -16,7 +16,7 @@
 -->
 <resources>
 
-    <string name="app_name">若水二维码扫描</string>
+    <string name="app_name">快递扫描鹰</string>
     <string name="app_picker_name">应用</string>
     <string name="bookmark_picker_name">书签</string>
     <string name="button_add_calendar">添加事件至日历</string>
