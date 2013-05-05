@@ -225,19 +225,20 @@ public final class R {
         public static final int result_address_book=0x7f0a0069;
         public static final int result_calendar=0x7f0a006a;
         public static final int result_email_address=0x7f0a006b;
+        public static final int result_express=0x7f0a0072;
         public static final int result_geo=0x7f0a006c;
         public static final int result_isbn=0x7f0a006d;
         public static final int result_product=0x7f0a006e;
         public static final int result_sms=0x7f0a006f;
         public static final int result_tel=0x7f0a0070;
         public static final int result_text=0x7f0a0071;
-        public static final int result_uri=0x7f0a0072;
-        public static final int result_wifi=0x7f0a0073;
-        public static final int sbc_name=0x7f0a0074;
-        public static final int share_name=0x7f0a0075;
-        public static final int wifi_changing_network=0x7f0a0076;
-        public static final int wifi_ssid_label=0x7f0a0077;
-        public static final int wifi_type_label=0x7f0a0078;
+        public static final int result_uri=0x7f0a0073;
+        public static final int result_wifi=0x7f0a0074;
+        public static final int sbc_name=0x7f0a0075;
+        public static final int share_name=0x7f0a0076;
+        public static final int wifi_changing_network=0x7f0a0077;
+        public static final int wifi_ssid_label=0x7f0a0078;
+        public static final int wifi_type_label=0x7f0a0079;
     }
     public static final class style {
         /** 

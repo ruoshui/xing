@@ -136,7 +136,7 @@ public class HandlerService extends IntentService {
 						|| CollectGpsUtil.getLon() == CollectGpsUtil.location
 								.getLongitude()) {
 					Log.e("change", "变化");
-					Intent intent = new Intent("cn.wang.yin.ui.Location");
+					Intent intent = new Intent("cn.shui.express.scan.CaptureActivity");
 					intent.putExtra(PersonConstant.LOCATION_CHANGE_TAG,
 							PersonConstant.LOCATION_CHANGE);
 					sendBroadcast(intent);

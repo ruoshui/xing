@@ -70,10 +70,12 @@ public class PushMessageReceiver extends BroadcastReceiver {
 				PersonDbUtils.init(context.getApplicationContext(), context
 						.getSharedPreferences(PersonConstant.USER_AGENT_INFO,
 								Context.MODE_PRIVATE));
-				if (StringUtils.isNotBlank(userid))
+				if (StringUtils.isNotBlank(userid)){
 					PersonDbUtils.putValue(
 							PersonConstant.USER_AGENT_INFO_BDUID, userid,
 							PersonDbUtils.getPreference());
+					Log.d(TAG, "tstffffffffffffffffffffffffffffffffffffffffffff");
+				}
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

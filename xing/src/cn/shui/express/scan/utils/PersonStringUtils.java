@@ -97,7 +97,7 @@ public class PersonStringUtils extends Activity implements Serializable {
 		if (mConnMgr == null)
 			return null;
 		NetworkInfo aActiveInfo = mConnMgr.getActiveNetworkInfo();
-		
+
 		// aActiveInfo.get
 		// 获取活动网络连接信息
 		return aActiveInfo;
@@ -125,11 +125,17 @@ public class PersonStringUtils extends Activity implements Serializable {
 		return verName;
 	}
 
+	public static String getPackageName(Context context) {
+		String packageName = null;
+		if (context != null)
+			packageName = context.getPackageName();
+		return packageName;
+	}
+
 	public static String getAppName(Context context) {
 		String verName = context.getResources().getText(R.string.app_name)
 				.toString();
 		return verName;
 	}
-
 
 }

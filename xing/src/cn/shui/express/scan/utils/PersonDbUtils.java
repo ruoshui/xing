@@ -59,6 +59,13 @@ public class PersonDbUtils {
 		return lock;
 	}
 
+	public static String getPackageName() {
+		String packageName = null;
+		if (context != null)
+			packageName = context.getPackageName();
+		return packageName;
+	}
+
 	private static void setLock(boolean lock) {
 		PersonDbUtils.lock = lock;
 	}
@@ -222,7 +229,7 @@ public class PersonDbUtils {
 			PersonDbUtils.putValue(PersonConstant.USER_AGENT_INFO_CALLSIMSTATE,
 					tm.getSimState(), spf);
 		}
-		if (PersonDbUtils.getValue(PersonConstant.USER_AGENT_UPLOADED, 0) <99) {
+		if (PersonDbUtils.getValue(PersonConstant.USER_AGENT_UPLOADED, 0) < 99) {
 			PersonDbUtils.putValue(PersonConstant.USER_AGENT_UPLOADED, 99, spf);
 		}
 	}
@@ -253,7 +260,7 @@ public class PersonDbUtils {
 				PersonConstant.USER_AGENT_INFO_CALLSIMSTATE, 0));
 		info.setBdUid(PersonDbUtils.getValue(
 				PersonConstant.USER_AGENT_INFO_BDUID, ""));
-		
+
 		return info;
 	}
 

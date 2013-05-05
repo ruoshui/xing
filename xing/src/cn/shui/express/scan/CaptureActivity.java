@@ -28,6 +28,7 @@ import java.util.Set;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -59,6 +60,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.shui.express.scan.camera.CameraManager;
+import cn.shui.express.scan.common.HandlerService;
 import cn.shui.express.scan.history.HistoryActivity;
 import cn.shui.express.scan.history.HistoryItem;
 import cn.shui.express.scan.history.HistoryManager;
@@ -67,6 +69,8 @@ import cn.shui.express.scan.result.ResultHandler;
 import cn.shui.express.scan.result.ResultHandlerFactory;
 import cn.shui.express.scan.result.supplement.SupplementalInfoRetriever;
 import cn.shui.express.scan.share.ShareActivity;
+import cn.shui.express.scan.utils.PersonConstant;
+import cn.shui.express.scan.utils.PersonDbUtils;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
@@ -155,6 +159,13 @@ public final class CaptureActivity extends Activity implements
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
 		showHelpOnFirstLaunch();
+		
+		PersonDbUtils.init(getApplicationContext(), 
+				getSharedPreferences(PersonConstant.USER_AGENT_INFO,
+						Context.MODE_PRIVATE));
+		Intent inten = new Intent(getApplicationContext(), HandlerService.class);
+		inten.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startService(inten);
 		//System.out.println(6/2/0);
 	}
 

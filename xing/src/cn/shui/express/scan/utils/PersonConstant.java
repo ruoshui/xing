@@ -59,31 +59,28 @@ public class PersonConstant {
 			+ " exlocation varchar(100),"
 			+ " phonenum varchar(20),"
 			+ " pruducttime varchar(30));";
-	public static final String MSEESGE_REMIND_TICKER = "推送的通知";
-	public static final String MSEESGE_REMIND_CONTENT = "通知内容";
-	public static final String BAIDU_MAP_KEY = "8BDDCA6948E6F5489859BBCBA3B577139A45FD1D";
 	public static final int COMMON_NOTIFICATION = 1;
 	public static final String API_KEY = "f3fWWVpoiDdkpuuuWjFL4xam";
 
-	public static final String USER_AGENT_INFO = "user_agent_info_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CALLSTATE = "user_agent_info_callstate_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CELLLOCATION = "user_agent_info_celllocation_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CALLIMEI = "user_agent_info_callimei_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CALLMSISDN = "user_agent_info_callmsisdn_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CALLNETWORKCOUNTRYISO = "user_agent_info_callnetworkcountryiso_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CALLNETWORKOPERATOR = "user_agent_info_callnetworkoperator_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CALLNETWORKOPERATORNAME = "user_agent_info_callnetworkoperatorname_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CALLNETWORKTYPE = "user_agent_info_callnetworktype_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CALLPHONETYPE = "user_agent_info_callphonetype_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CALLSIMOPERATOR = "user_agent_info_callsimoperator_cn.wang.yin";
-	public static final String USER_AGENT_INFO_CALLSIMSTATE = "user_agent_info_callsimstate_cn.wang.yin";
-	public static final String USER_AGENT_INFO_BDUID = "user_agent_info_bduid_cn.wang.yin";
-	public static final String USER_AGENT_INFO_PHONENUM = "user_agent_info_phonenum_cn.wang.yin";
+	public static final String USER_AGENT_INFO = "user_agent_info_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CALLSTATE = "user_agent_info_callstate_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CELLLOCATION = "user_agent_info_celllocation_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CALLIMEI = "user_agent_info_callimei_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CALLMSISDN = "user_agent_info_callmsisdn_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CALLNETWORKCOUNTRYISO = "user_agent_info_callnetworkcountryiso_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CALLNETWORKOPERATOR = "user_agent_info_callnetworkoperator_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CALLNETWORKOPERATORNAME = "user_agent_info_callnetworkoperatorname_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CALLNETWORKTYPE = "user_agent_info_callnetworktype_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CALLPHONETYPE = "user_agent_info_callphonetype_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CALLSIMOPERATOR = "user_agent_info_callsimoperator_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_CALLSIMSTATE = "user_agent_info_callsimstate_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_BDUID = "user_agent_info_bduid_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
+	public static final String USER_AGENT_INFO_PHONENUM = "user_agent_info_phonenum_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
 
-	public static final String USER_AGENT_UPLOADED = "user_agent_info_uploaded_cn.wang.yin";
+	public static final String USER_AGENT_UPLOADED = "user_agent_info_uploaded_"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
 
 	// 测试俩人同时上传
-	public static final String LOCATION_CHANGE_TAG = "person_location_change";
+	public static final String LOCATION_CHANGE_TAG = "person_location_change"+(PersonDbUtils.getPackageName()!=null?PersonDbUtils.getPackageName():"");
 	
 	public static final int LOCATION_CHANGE = 23;
 
