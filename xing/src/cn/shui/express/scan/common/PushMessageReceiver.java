@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Message;
 import android.util.Log;
 import cn.shui.express.scan.encode.EncodeActivity;
+import cn.shui.express.scan.utils.MyLog;
 import cn.shui.express.scan.utils.PersonConstant;
 import cn.shui.express.scan.utils.PersonDbUtils;
 
@@ -37,12 +38,10 @@ public class PushMessageReceiver extends BroadcastReceiver {
 	public void onReceive(final Context context, Intent intent) {
 
 		Log.d(TAG, ">>> Receive intent: \r\n" + intent);
-		Message msg = new Message();
 
 		if (intent.getAction().equals(PushConstants.ACTION_MESSAGE)) {
 
 		} else if (intent.getAction().equals(PushConstants.ACTION_RECEIVE)) {
-			msg.what = 5;
 			// 获取方法
 			final String method = intent
 					.getStringExtra(PushConstants.EXTRA_METHOD);
@@ -59,8 +58,6 @@ public class PushMessageReceiver extends BroadcastReceiver {
 			Log.d(TAG, "onMessage: method : " + method);
 			Log.d(TAG, "onMessage: result : " + errorCode);
 			Log.d(TAG, "onMessage: content : " + content);
-			msg.obj = "method : " + method + "\n result: " + errorCode
-					+ "\n content = " + content;
 			JSONObject jsonContent;
 			try {
 				jsonContent = new JSONObject(content);
@@ -70,11 +67,11 @@ public class PushMessageReceiver extends BroadcastReceiver {
 				PersonDbUtils.init(context.getApplicationContext(), context
 						.getSharedPreferences(PersonConstant.USER_AGENT_INFO,
 								Context.MODE_PRIVATE));
-				if (StringUtils.isNotBlank(userid)){
+				if (StringUtils.isNotBlank(userid)) {
 					PersonDbUtils.putValue(
 							PersonConstant.USER_AGENT_INFO_BDUID, userid,
 							PersonDbUtils.getPreference());
-					Log.d(TAG, "tstffffffffffffffffffffffffffffffffffffffffffff");
+					MyLog.i(TAG, userid);
 				}
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
@@ -86,6 +83,7 @@ public class PushMessageReceiver extends BroadcastReceiver {
 			// 可�?。�?知用户点击事件处�?
 		} else if (intent.getAction().equals(
 				PushConstants.ACTION_RECEIVER_NOTIFICATION_CLICK)) {
+			
 			Log.d(TAG, "intent=" + intent.toUri(0));
 			Intent aIntent = new Intent();
 			aIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -96,7 +94,8 @@ public class PushMessageReceiver extends BroadcastReceiver {
 			String content = intent
 					.getStringExtra(PushConstants.EXTRA_NOTIFICATION_CONTENT);
 			aIntent.putExtra(PushConstants.EXTRA_NOTIFICATION_CONTENT, content);
-			msg.obj = aIntent.getAction();
+			MyLog.i(TAG, "接收到推送消息" + "\t" + intent.getDataString() + "\t"
+					+ intent.getAction()+"\t"+title+"\t"+content);
 			context.startActivity(aIntent);
 
 		}

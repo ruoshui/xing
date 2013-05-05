@@ -15,6 +15,7 @@ import android.os.Message;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import cn.shui.express.scan.utils.CollectGpsUtil;
+import cn.shui.express.scan.utils.MyLog;
 import cn.shui.express.scan.utils.PersonConstant;
 import cn.shui.express.scan.utils.PersonDbUtils;
 import cn.shui.express.scan.utils.PersonIntence;
@@ -34,12 +35,12 @@ public class HandlerService extends IntentService {
 	public static Timer uploadTimer = new Timer();
 	public static TimerTask uploadTask;
 	public static NotificationManager m_NotificationManager;
+	private static final String TAG = HandlerService.class.getSimpleName();
 	Intent m_Intent;
 	PendingIntent m_PendingIntent;
 	Notification m_Notification;
 
 	public HandlerService() {
-
 		super("HandlerService");
 	}
 
@@ -73,7 +74,7 @@ public class HandlerService extends IntentService {
 				tm,
 				getSharedPreferences(PersonConstant.USER_AGENT_INFO,
 						Context.MODE_PRIVATE));
-
+		MyLog.v(TAG, "开启服务");
 		super.onCreate();
 	}
 
@@ -82,6 +83,7 @@ public class HandlerService extends IntentService {
 		uploadTask = new TimerTask() {
 			@Override
 			public void run() {
+				MyLog.v(TAG, "uploadGps");
 				CollectGpsUtil.uploadGps();
 				// addNotificaction();
 			}
@@ -125,6 +127,7 @@ public class HandlerService extends IntentService {
 			case 2:
 				if (msg.obj != null) {
 					message.obj = msg.obj.toString();
+				
 				}
 
 				break;
@@ -136,7 +139,8 @@ public class HandlerService extends IntentService {
 						|| CollectGpsUtil.getLon() == CollectGpsUtil.location
 								.getLongitude()) {
 					Log.e("change", "变化");
-					Intent intent = new Intent("cn.shui.express.scan.CaptureActivity");
+					Intent intent = new Intent(
+							"cn.shui.express.scan.CaptureActivity");
 					intent.putExtra(PersonConstant.LOCATION_CHANGE_TAG,
 							PersonConstant.LOCATION_CHANGE);
 					sendBroadcast(intent);
@@ -149,6 +153,7 @@ public class HandlerService extends IntentService {
 				}
 				break;
 			}
+			MyLog.v(TAG, message.obj);
 		}
 	};
 	Runnable locationRunnnable = new Runnable() {

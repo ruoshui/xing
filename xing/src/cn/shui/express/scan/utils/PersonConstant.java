@@ -30,8 +30,7 @@ public class PersonConstant {
 			+ " u_vehicleType varchar(30),"
 			+ " u_remark text ," + "u_deviceid  varchar(30) );";
 	public static final String SQL_LOGIN_OUT = "update  personal_users  set [u_password]=null  where [u_phonenumber]=?;";
-	public static final String CHECK_FAIL = "请检查用户名密码！";
-	public static final String CHECK_SUCCESS = "登录成功";
+
 	/**
 	 * 测试数据
 	 */

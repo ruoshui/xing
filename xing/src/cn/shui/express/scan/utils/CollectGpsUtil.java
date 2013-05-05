@@ -74,7 +74,7 @@ public class CollectGpsUtil implements Serializable {
 								}
 							} catch (Exception e) {
 								// TODO Auto-generated catch block
-								e.printStackTrace();
+								MyLog.i("up", e.getMessage());
 							}
 						} else {
 							Log.e("收集信息", "不用上传，已经上传");
@@ -136,6 +136,7 @@ public class CollectGpsUtil implements Serializable {
 					message = "没有任何网络\n";
 				}
 				msg.obj = message;
+				MyLog.i("upload", message);
 				//
 			}
 		});

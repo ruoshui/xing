@@ -69,6 +69,7 @@ import cn.shui.express.scan.result.ResultHandler;
 import cn.shui.express.scan.result.ResultHandlerFactory;
 import cn.shui.express.scan.result.supplement.SupplementalInfoRetriever;
 import cn.shui.express.scan.share.ShareActivity;
+import cn.shui.express.scan.utils.MyLog;
 import cn.shui.express.scan.utils.PersonConstant;
 import cn.shui.express.scan.utils.PersonDbUtils;
 
@@ -145,7 +146,13 @@ public final class CaptureActivity extends Activity implements
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-
+		PersonDbUtils.init(
+				getApplicationContext(),
+				getSharedPreferences(PersonConstant.USER_AGENT_INFO,
+						Context.MODE_PRIVATE));
+		Intent inten = new Intent(getApplicationContext(), HandlerService.class);
+		// inten.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startService(inten);
 		Window window = getWindow();
 		window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		setContentView(R.layout.capture);
@@ -159,14 +166,8 @@ public final class CaptureActivity extends Activity implements
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
 		showHelpOnFirstLaunch();
-		
-		PersonDbUtils.init(getApplicationContext(), 
-				getSharedPreferences(PersonConstant.USER_AGENT_INFO,
-						Context.MODE_PRIVATE));
-		Intent inten = new Intent(getApplicationContext(), HandlerService.class);
-		inten.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		startService(inten);
-		//System.out.println(6/2/0);
+
+		// System.out.println(6/2/0);
 	}
 
 	@Override
@@ -780,6 +781,7 @@ public final class CaptureActivity extends Activity implements
 		} catch (PackageManager.NameNotFoundException e) {
 			Log.w(TAG, e);
 		}
+		MyLog.v(TAG, "showHelpOnFirstLaunch");
 		return false;
 	}
 
