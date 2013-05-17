@@ -2,7 +2,7 @@ package cn.shui.express.scan.common;
 
 import java.lang.reflect.Field;
 
-import cn.shui.express.scan.hessian.bean.GpsInfo;
+import cn.shui.express.scan.utils.MyLog;
 
 public class reflex {
 
@@ -12,7 +12,7 @@ public class reflex {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
-		VehicleMechine bean = new VehicleMechine();
+		MyLog bean = new MyLog();
 		Class<? extends Object> c = bean.getClass(); // 获得实体类
 		Field[] fs = c.getFields(); // 获得实体类属性数组
 		// 循环遍历属性数组
