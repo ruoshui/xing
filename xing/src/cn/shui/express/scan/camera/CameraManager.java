@@ -176,8 +176,7 @@ public final class CameraManager {
 	}
 
 	/**
-	 * Convenience method for
-	 * {@link cn.shui.express.scan.CaptureActivity}
+	 * Convenience method for {@link cn.shui.express.scan.CaptureActivity}
 	 */
 	public synchronized void setTorch(boolean newSetting) {
 		if (camera != null) {
@@ -265,10 +264,11 @@ public final class CameraManager {
 				// Called early, before init even finished
 				return null;
 			}
-			rect.left = rect.left * cameraResolution.x / screenResolution.x;
-			rect.right = rect.right * cameraResolution.x / screenResolution.x;
-			rect.top = rect.top * cameraResolution.y / screenResolution.y;
-			rect.bottom = rect.bottom * cameraResolution.y / screenResolution.y;
+			rect.left = rect.left * cameraResolution.y / screenResolution.x;
+			rect.right = rect.right * cameraResolution.y / screenResolution.x;
+			rect.top = rect.top * cameraResolution.x / screenResolution.y;
+			rect.bottom = rect.bottom * cameraResolution.x / screenResolution.y;
+
 			framingRectInPreview = rect;
 		}
 		return framingRectInPreview;
